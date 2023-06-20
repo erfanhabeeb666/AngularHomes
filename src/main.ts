@@ -7,9 +7,13 @@ import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
 import routeConfig from './app/routes';
 bootstrapApplication(AppComponent,
-    {providers: [provideProtractorTestingSupport()]})
-  .catch(err => console.error(err));
-
+  {
+    providers: [
+      provideProtractorTestingSupport(),
+      provideRouter(routeConfig)
+    ]
+  }
+).catch(err => console.error(err));
 
 /*
 Copyright Google LLC. All Rights Reserved.
